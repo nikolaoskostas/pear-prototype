@@ -203,7 +203,7 @@ class APELMessageParser:
                 if self.config.lhc_only and vo.lower() not in constants.LHC_VOS:
                     continue
                 
-                processors = _safe_int(rec.get("Processors"), default=1)
+                processors = max(1, _safe_int(rec.get("Processors"), default=1))
                 wc_time = _safe_float(rec.get("WallDuration"), default=0.0)
                 wc_time = (wc_time / SECONDS_PER_HOUR) * processors
                 benchmark, wc_work = self.parse_normalised_computing_duration(rec.get("NormalisedWallDuration"))
