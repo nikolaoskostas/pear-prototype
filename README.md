@@ -1,3 +1,3 @@
-# PEAR (Portal for Enhanced Accounting Records) Prototype
+# EGI Accounting Portal Replacement & PEAR Prototype
 
-A prototype for PEAR (Portal for Enhanced Accounting Records), the modernized accounting system for EGI (European Grid Infrastructure) and WLCG (Worldwide LHC Computing Grid).
+The modernized replacement of the EGI (European Grid Infrastructure) Accounting Portal and the prototype for PEAR (Portal for Enhanced Accounting Records), the next-generation accounting system for EGI and WLCG (Worldwide LHC Computing Grid).
