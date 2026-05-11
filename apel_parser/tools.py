@@ -105,7 +105,7 @@ def publish(file_path: str | Path) -> None:
 
 
 def fetch_cric_topology(api: str | None = None) -> dict[str, Any]:
-    """Fetch raw CRIC RCSITE topology payload."""
+    """Fetch CRIC RCSITE topology."""
     target_api = api or constants.CRIC_RCSITE_API
     try:
         response = requests.get(
@@ -122,6 +122,6 @@ def fetch_cric_topology(api: str | None = None) -> dict[str, Any]:
     except requests.exceptions.RequestException as req_err:
         _logger.error("Failed to fetch CRIC topology from %s: %s", target_api, req_err)
         return {}
-    except json.JSONDecodeError as json_err:
+    except ValueError as json_err:
         _logger.error("Invalid JSON from CRIC topology endpoint %s: %s", target_api, json_err)
         return {}
